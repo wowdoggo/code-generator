@@ -68,6 +68,7 @@ const app = Vue.createApp({
     update: function () {
       this.updatingIn = this.period - (getCurrentSeconds() % this.period);
       this.token = truncateTo(this.totp.generate(), this.digits);
+      document.getElementById('token').innerHTML = this.token;
     },
 
     getKeyFromUrl: function () {
